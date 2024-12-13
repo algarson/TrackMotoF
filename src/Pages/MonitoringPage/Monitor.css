@@ -1,0 +1,365 @@
+.test-body{
+    background-color: #333741;
+}
+.parent-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+.mapbox-container{
+    height: 65%;
+    width: 100%;
+}
+.device-container{
+    height: 35%;
+    width: 100%;
+}
+.navbar-container {
+    position: fixed;
+    bottom: 1em;
+    left: 50%; /* Position it in the middle of the screen horizontally */
+    transform: translateX(-50%); /* Adjust its center by half of its width */
+    background-color: #EEB700;
+    border-radius: 25px;
+    height: 3em;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.profile-icon-container {
+    display: none;
+}
+.expanded-profile p {
+    display: none; /* Initially hidden */
+    margin-left: 1em;
+    font-size: 0.9em;
+    color: #1B1F2D;
+  }
+.navbar-container span{
+    color: #1B1F2D;
+}
+
+/*Device Cards*/
+.device-cards {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+    box-sizing: border-box;
+
+}
+.device-card {
+    background-color: #1B1F2D;
+    border-radius: 8px;
+    padding: 10px;
+    margin-right: 10px;
+    min-width: 270px; /* Reduce min-width to fit more cards in smaller screen */
+    max-width: 200px;
+    min-height: 120px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    scroll-snap-align: center;
+    box-sizing: border-box;
+    gap: 1em;
+    font-size: 13px;
+}
+.left_side{
+    display: block;
+    text-align: left;
+}
+.right_side span{
+    font-size: 70px;
+    right: -1;
+    color: #EEB700;
+}
+.device-card .status {
+    color: #f1c40f;
+    font-size: 0.9em;
+}
+.device-card-func{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.device-card button {
+    background-color: #f1c40f;
+    color: #252837;
+    min-width: 6em;
+    height: 1.5em;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+.status-bar{
+    margin-top: 10px;
+    min-width: 2em;
+    height: 1em;
+    background-color: #34C759;
+    border-radius: 18px;
+}
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+        
+/* Modal content */
+.modal-content {
+    background-color: #1B1F2D;
+    border: 1px solid #E0DEDE;
+    color: #ffd700; /* Gold color */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+        
+.modal-content p {
+    font-size: 12px;
+    color: #aaa; /* Light gray */
+    margin-bottom: 15px;
+}
+        
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #E0DEDE;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #E0DEDE;
+    color: black;
+}
+        
+.modal-content button {
+    width: 15em;
+    max-width: 240px;
+    padding: 10px;
+    background-color: #ffd700;
+    color: #333741; /* Match the modal's background */
+    border: none;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+        
+.modal-content button:hover {
+    background-color: #e6c200; /* Slightly darker gold for hover effect */
+}
+
+.icon-text{
+    display: none;
+    color: #1B1F2D;
+}
+
+
+.monitor-title{
+    display: none;
+}
+@media (min-width: 320px) {
+    .device-card {
+        background-color: #1B1F2D;
+        border-radius: 8px;
+        padding: 10px;
+        margin-right: 10px;
+        min-width: 290px; /* Reduce min-width to fit more cards in smaller screen */
+        max-width: 200px;
+        min-height: 120px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        scroll-snap-align: center;
+        box-sizing: border-box;
+        gap: 1em;
+        font-size: 13px;
+    }
+    
+}
+/*RESPONSIVE CSS*/
+@media (min-width: 768px) {
+    .navbar-container:hover .icon-text {
+        display: block; /* Display all the icon texts */
+    }
+    .test-body{
+        background-color: #1B1F2D;
+    }
+    .parent-container{
+        padding-left: 2.78em;
+    }
+    .device-container{
+        background-color: #333741;
+    }
+    .mapbox-container{
+        padding: 0.5em;
+    }
+    .monitor-title{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 1em;
+        padding-left: 2em;
+    }
+    .monitor-title h5{
+        font-size: 1.5em;
+        color: #BDBDBD;
+    }
+    .monitor-title img{
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .profile-icon-container {
+        display: flex; /* Ensure flex layout */
+        align-items: center;
+        justify-content: center; /* Center the profile icon */
+        width: 100%; /* Ensure it spans the full width of the navbar */
+        padding: 0.5em;
+        transition: all 0.3s ease; /* Smooth transition for the expanded state */
+        gap: 1em; /* Add spacing between elements */
+    }
+    
+    .expanded-profile {
+        display: flex;
+        align-items: center;
+        width: auto; /* Prevent width from forcing misalignment */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+    
+    .expanded-profile .profile-icon img {
+        border: 2px solid #1B1F2D;
+        border-radius: 50%; /* Circular profile picture */
+        width: 2em; /* Size of the profile picture */
+        height: 2em;
+        object-fit: cover; /* Ensure the image fits well */
+    }
+    
+    .navbar-container.expanded .profile-icon-container {
+        justify-content: flex-start; /* Align content to the left when expanded */
+        padding-left: 4em; /* Add some left padding */
+    }
+    .navbar-container.expanded .expanded-profile p {
+      display: block; /* Show when sidebar is expanded */
+
+    } 
+    .navbar-container {
+        position: fixed;
+        border-radius: 0;
+        left: 25px;
+        top: 0;
+        height: 100vh;
+        width: 3em;
+        background-color: #eeb700;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1em 0;
+        gap: 1.5em;
+        transition: width 0.3s ease; /* Smooth width transition */
+        overflow: hidden; /* Prevent overflow when collapsed */
+      }
+      
+      .navbar-container.expanded {
+        width: 20em; /* Expanded width */
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        align-items: flex-start;
+        padding-left: 5em;
+      }
+      
+      .navbar-container span {
+        font-size: 1.5em;
+        color: #1b1f2d;
+        transition: color 0.3s ease; /* Smooth color transition */
+      }
+      .icon-divs .icon-text{
+        transition: color 0.3s ease;
+      }
+      
+      .navbar-container.expanded span {
+        margin-left: 3em;
+
+      }     
+      .icon-divs:hover span,
+      .icon-divs:hover .icon-text {
+          color: #fff; /* Turn both the icon and text white */
+      }
+      
+    .navbar-container span{
+        color: #1B1F2D;
+    }
+    
+    .device-card{
+        margin-top: 1em;
+    }
+
+    .icon-divs {
+        display: flex;
+        align-items: center; /* Vertically centers icons and text */
+        gap: 1em; /* Adds space between the icon and text */
+        padding: 0.5em 1em; /* Add spacing for a clean look */
+        transition: background-color 0.3s ease;
+        cursor: pointer; /* Add pointer effect on hover */
+      }
+      .icon-divs:hover {
+        background-color: rgba(0, 0, 0, 0.2); /* Adds hover effect */
+        border-radius: 10px;
+      }
+      .modal-screen-larger{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+    .modal-content-screen{
+        background-color: #1B1F2D;
+        border: 1px solid #ffd700;
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        height: 450px;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    }
+}
